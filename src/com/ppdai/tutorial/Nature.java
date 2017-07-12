@@ -10,6 +10,6 @@ public enum Nature {
 
     @Override
     public String toString() {
-        return super.toString();
+        return name().toLowerCase();
     }
 }

@@ -42,7 +42,8 @@ public enum PokemonType
     static
     {
         // TODO: fill in this implementation
-        
+        STRENGTH_MAP = new HashMap<>();
+        WEAKNESS_MAP = new HashMap<>();
     }
 
     /**
@@ -74,5 +75,6 @@ public enum PokemonType
     public String toString()
     {
         // TODO: fill in implementation
+        return name().toLowerCase();
     }
 }
