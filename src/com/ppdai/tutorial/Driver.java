@@ -6,6 +6,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
 /**
  * Lab 8
@@ -44,7 +46,9 @@ public class Driver
 
         // Populate the Pokémon HashMap
         // TODO: complete implementation
-        
+        pokemonMap.put("SQR", Pokemon.SQUIRTLE);
+        pokemonMap.put("BLB", Pokemon.BULBASAUR);
+        pokemonMap.put("CHR", Pokemon.CHARMANDER);
 
         //print the menu options
         System.out.println("Professor Oak, the Pokemon professor, presents"
@@ -91,7 +95,7 @@ public class Driver
                  * is in the pokemonMap's set of keys.
                  */
                 // TODO: fill in the condition 
-                while (???)
+                while (!pokemonMap.containsKey(pokemonChoice))
                 {
                     System.out.println(
                         "Please choose one of the Pokemon listed.");
@@ -101,11 +105,11 @@ public class Driver
                 
                 // Extract the information about the Pokemon & print out the information
                 // TODO: complete implementation
-                Pokemon pokemon = ???;  
+                Pokemon pokemon = pokemonMap.get(pokemonChoice);
                 
                 System.out.printf("You choose %s.\n", pokemon);
 
-                PokemonType pokemonType = ???
+                PokemonType pokemonType = pokemon.getPokemonType();
 
                 System.out.printf("Your %s type Pokemon is weak against %s"
                     + " types and strong against %s types.\n", pokemonType,
@@ -118,7 +122,16 @@ public class Driver
             {
                 // TODO: Print out all of the Pokemons' three-letter abbreviation 
                 // and the description.
-                
+                int len = pokemonMap.size();
+
+                Iterator iter = pokemonMap.entrySet().iterator();
+                while (iter.hasNext()) {
+                    Map.Entry entry  = (Map.Entry) iter.next();
+                    String key = (String) entry.getKey();
+                    Pokemon value = (Pokemon) entry.getValue();
+                    System.out.println(key.toUpperCase() + " - " + value.toString());
+                }
+                pokemonMap.keySet();
                 break;
             }
         }

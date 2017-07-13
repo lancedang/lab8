@@ -44,6 +44,15 @@ public enum PokemonType
         // TODO: fill in this implementation
         STRENGTH_MAP = new HashMap<>();
         WEAKNESS_MAP = new HashMap<>();
+
+        STRENGTH_MAP.put(PokemonType.FIRE, PokemonType.GRASS);
+        STRENGTH_MAP.put(PokemonType.WATER, PokemonType.FIRE);
+        STRENGTH_MAP.put(PokemonType.GRASS, PokemonType.WATER);
+
+        WEAKNESS_MAP.put(PokemonType.GRASS, PokemonType.FIRE);
+        WEAKNESS_MAP.put(PokemonType.FIRE, PokemonType.WATER);
+        WEAKNESS_MAP.put(PokemonType.WATER, PokemonType.GRASS);
+
     }
 
     /**
@@ -55,6 +64,7 @@ public enum PokemonType
     {
         // Really should check for existence of key, but.
         // TODO: fill in return value
+        return STRENGTH_MAP.get(this);
     }
 
     /**
@@ -66,6 +76,7 @@ public enum PokemonType
     {
         // Really should check for existence of key, but.
         // TODO: fill in return value
+        return WEAKNESS_MAP.get(this);
     }
 
     /* (non-Javadoc)

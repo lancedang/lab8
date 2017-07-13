@@ -22,6 +22,6 @@ public class PokemonInfo {
 
     @Override
     public String toString() {
-        return "a <" + this.nature.toString();
+        return "a " + this.nature.toString() + " " + this.pokemonType.toString() + " type";
     }
 }
