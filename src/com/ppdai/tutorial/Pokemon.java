@@ -30,7 +30,6 @@ public enum Pokemon {
         String name = name().toLowerCase();
         //first letter to uppercase
         char[] cs = name.toCharArray();
-
         cs[0] -= 32;
         name = String.valueOf(cs);
         return name + ": a " + getNature() + " " + getPokemonType() + " type";
